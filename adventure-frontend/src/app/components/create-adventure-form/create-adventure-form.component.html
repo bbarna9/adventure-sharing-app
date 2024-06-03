@@ -1,0 +1,147 @@
+<div class="cardCont">
+  <h1 class="text-center pt-5">Post new adventure:</h1>
+
+  <form
+    (ngSubmit)="onSubmit()"
+    class="lg:w-[30vw] max-md:w-[90vw] p-6 shadow-md bg-[#303030]"
+  >
+    <!------------------ TITLE ------------------>
+
+    <div class="mb-4">
+      <mat-form-field class="w-full">
+        <mat-label class="">Title</mat-label>
+        <input
+          matInput
+          placeholder="Enter title"
+          required
+          name="title"
+          value=""
+          [(ngModel)]="adventureItem.title"
+          class="py-2 px-3 mt-1 bg-[#404040]"
+        />
+      </mat-form-field>
+    </div>
+
+    <!------------------ LOCATION ------------------>
+
+    <div class="mb-4">
+      <mat-form-field class="w-full">
+        <mat-label class="">Location</mat-label>
+        <input
+          matInput
+          placeholder="Add location"
+          required
+          name="location"
+          value=""
+          [(ngModel)]="adventureItem.location"
+          class="py-2 px-3 mt-1"
+        />
+      </mat-form-field>
+    </div>
+
+    <!------------------ IMAGE ------------------>
+
+    <div class="mb-4">
+      <mat-form-field class="w-full">
+        <mat-label class="">Image Url</mat-label>
+        <input
+          matInput
+          placeholder="Add image url"
+          required
+          name="imageUrl"
+          value=""
+          [(ngModel)]="adventureItem.imageUrl"
+          class="py-2 px-3 mt-1"
+        />
+      </mat-form-field>
+    </div>
+
+    <!------------------ MONTH OF TRAVEL ---------------->
+
+    <div class="mb-4">
+      <mat-form-field class="w-full">
+        <mat-label class="">Month of travel</mat-label>
+        <mat-select
+          [(ngModel)]="adventureItem.monthOfTravel"
+          name="monthOfTravel"
+        >
+          <mat-option value="JANUARY">January</mat-option>
+          <mat-option value="FEBRUARY">February</mat-option>
+          <mat-option value="MARCH">March</mat-option>
+          <mat-option value="APRIL">April</mat-option>
+          <mat-option value="MAY">May</mat-option>
+          <mat-option value="JUNE">June</mat-option>
+          <mat-option value="JULY">July</mat-option>
+          <mat-option value="AUGUST">August</mat-option>
+          <mat-option value="SEPTEMBER">September</mat-option>
+          <mat-option value="OCTOBER">October</mat-option>
+          <mat-option value="NOVEMBER">November</mat-option>
+          <mat-option value="DECEMBER">December</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!------------------ COST ------------------>
+
+    <div class="mb-4 rounded-t-md bg-[#ECECEC]">
+      <mat-radio-group
+        aria-label="Select an option"
+        class="w-full radioGroup"
+        name="cost"
+        [(ngModel)]="adventureItem.cost"
+      >
+        <mat-radio-button value="CHEAP" [checked]="true" class="mr-10"
+          >Cheap</mat-radio-button
+        >
+        <mat-radio-button value="AFFORDABLE" class="mr-10"
+          >Affordable</mat-radio-button
+        >
+        <mat-radio-button value="EXPENSIVE">Expensive</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <!------------------ LENGTH ------------------>
+
+    <div class="mb-4 rounded-t-md bg-[#ECECEC]">
+      <mat-radio-group
+        aria-label="Select an option"
+        class="w-full radioGroup"
+        name="lengthOfTravel"
+        [(ngModel)]="adventureItem.lengthOfTravel"
+      >
+        <mat-radio-button value="SHORT" [checked]="true" class="mr-7"
+          >Less than 7 days</mat-radio-button
+        >
+        <mat-radio-button value="MEDIUM" class="mr-7"
+          >7-10 days</mat-radio-button
+        >
+        <mat-radio-button value="LONG" class="mr-7"
+          >More than 10 days</mat-radio-button
+        >
+      </mat-radio-group>
+    </div>
+
+    <!------------------ DESCRIPTION ---------------->
+
+    <div class="mb-4">
+      <mat-form-field class="w-full">
+        <mat-label class="">Description</mat-label>
+        <textarea
+          style="resize: none"
+          matInput
+          placeholder="Enter description"
+          name="description"
+          value=""
+          rows="4"
+          r
+          [(ngModel)]="adventureItem.description"
+          class="py-2 px-3 mt-1"
+        ></textarea>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button color="accent" type="submit">Create</button>
+    </div>
+  </form>
+</div>

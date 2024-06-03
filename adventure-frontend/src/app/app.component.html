@@ -1,0 +1,19 @@
+<!-- <router-outlet></router-outlet> -->
+
+<div class="">
+  @if(user){
+  <div class="min-h-[100vh]">
+    <div class="h-[10vh]">
+      <app-navbar />
+    </div>
+    <div class="min-h-[80vh]">
+      <app-home />
+    </div>
+    <div class="h-[10vh]">
+      <app-footer />
+    </div>
+  </div>
+  } @else {
+  <app-auth />
+  }
+</div>

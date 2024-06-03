@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: adventure-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/adventureapp
+    username: root
+    password: r00tpW79
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
